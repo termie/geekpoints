@@ -27,3 +27,13 @@ indexes:
   properties:
   - name: total
     direction: desc
+
+- kind: TotalByVoter
+  properties:
+  - name: total
+    direction: desc
+
+- kind: TotalByVoter
+  properties:
+  - name: nick
+  - name: voter

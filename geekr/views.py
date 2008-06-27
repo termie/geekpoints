@@ -160,6 +160,6 @@ def _rebuild_total_by_voters(total, nick):
     totals[total_key][2] += p.value
   for k, v in totals.iteritems():
     t = TotalByVoter(key_name = k, nick= v[0], 
-                     voter=v[1], total=v[2])
+                     voter=v[1], total=v[2], parent=total)
     t.put()
 

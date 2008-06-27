@@ -22,3 +22,8 @@ indexes:
   - name: nick
   - name: created_at
     direction: desc
+
+- kind: Total
+  properties:
+  - name: total
+    direction: desc

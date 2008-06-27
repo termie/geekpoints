@@ -16,12 +16,18 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
     (r'^$', 'geekr.views.index'),
+    (r'^scoreboard$', 'geekr.views.scoreboard'),
     (r'^(?P<nick>[\w\_\.]+)$', 'geekr.views.score'),
     (r'^(?P<nick>[\w\_\.]+)/verbose', 'geekr.views.verbose'),
+    (r'^(?P<nick>[\w\_\.]+)/by_voter', 'geekr.views.verbose_by_voter'),
     (r'^(?P<nick>[\w\_\.]+)/plusplus', 'geekr.views.inc', {'after': False, 'value': 1}),
     (r'^(?P<nick>[\w\_\.]+)/minusminus', 'geekr.views.inc', {'after': False, 'value': -1}),
+    (r'^(?P<nick>[\w\_\.]+)/?\+\+', 'geekr.views.inc', {'after': False, 'value': 1}),
+    (r'^(?P<nick>[\w\_\.]+)/?\-\-', 'geekr.views.inc', {'after': False, 'value': -1}),
     (r'^plusplus/(?P<nick>[\w\_\.]+)', 'geekr.views.inc', {'after': True, 'value': 1}),
     (r'^minusminus/(?P<nick>[\w\_\.]+)', 'geekr.views.inc', {'after': True, 'value': -1}),
+    (r'^\+\+/?(?P<nick>[\w\_\.]+)', 'geekr.views.inc', {'after': True, 'value': 1}),
+    (r'^\-\-/?(?P<nick>[\w\_\.]+)', 'geekr.views.inc', {'after': True, 'value': -1}),
 
     # Example:
     # (r'^foo/', include('foo.urls')),

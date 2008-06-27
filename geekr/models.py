@@ -14,3 +14,8 @@ class Point(BaseModel):
 class Total(BaseModel):
   nick = models.StringProperty()
   total = models.IntegerProperty()
+
+class TotalByVoter(BaseModel):
+  nick = models.StringProperty()
+  total = models.IntegerProperty()
+  voter = models.UserProperty()
